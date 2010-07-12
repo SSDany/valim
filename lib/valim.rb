@@ -19,20 +19,12 @@ class FalseClass
     self
   end
 
-  def inspect
-    "deny"
-  end
-
   def to_s
     "deny"
   end
 end
 
 class TrueClass
-  def inspect
-    "confirm"
-  end
-
   def / o
     self
   end
