@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "valim"
-  s.version     = "0.0.3"
+  s.version     = "0.0.4"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Carl Lerche"]
   s.email       = ["me@carllerche.com"]

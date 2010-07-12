@@ -2,6 +2,15 @@ $:.unshift File.expand_path('../../lib', __FILE__)
 require 'valim'
 
 describe "Valim" do
+  it "has doubts" do
+    Valim.have_doubts { 5 > 2 }.should == confirm
+    Valim.have_doubts { 5 < 2 }.should == deny
+  end
+
+  it "facepalms" do
+    lambda { facepalm }.should raise_error(Valim::FacepalmError)
+  end
+
   describe "Truth" do
     it "is confirmed" do
       true.inspect.should == "confirm"

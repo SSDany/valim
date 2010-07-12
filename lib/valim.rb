@@ -1,3 +1,12 @@
+module Valim
+  class FacepalmError < StandardError ; end
+
+  def have_doubts
+    !!yield
+  end
+  extend self
+end
+
 module Kernel
   def confirm
     !!self
@@ -15,6 +24,10 @@ module Kernel
 
   def confirm_deny?
     confirm?
+  end
+
+  def facepalm
+    raise Valim::FacepalmError, "**facepalm**"
   end
 end
 
