@@ -1,44 +1,20 @@
 module Kernel
-  def confirm?
-    true
-  end
-
-  def deny?
-    false
-  end
-
   def confirm
     !!self
   end
+  alias :confirm? :confirm
 
   def deny
-    false
+    !self
   end
+  alias :deny? :deny
 
   def confirm_deny?
     confirm?
   end
 end
 
-module Valim
-  module Denied
-    def confirm?
-      false
-    end
-
-    def deny?
-      true
-    end
-  end
-end
-
-class NilClass
-  include Valim::Denied
-end
-
 class FalseClass
-  include Valim::Denied
-
   def / o
     self
   end
