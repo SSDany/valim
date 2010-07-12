@@ -8,7 +8,7 @@ module Kernel
   end
 
   def confirm
-    true
+    !!self
   end
 
   def deny
@@ -39,6 +39,10 @@ end
 class FalseClass
   include Valim::Denied
 
+  def / o
+    self
+  end
+
   def inspect
     "deny"
   end
@@ -52,7 +56,11 @@ class TrueClass
   def inspect
     "confirm"
   end
-  
+
+  def / o
+    self
+  end
+
   def to_s
     "confirm"
   end

@@ -22,6 +22,15 @@ describe "Valim" do
       true.confirm_deny?.should == confirm
       "truth".confirm_deny?.should == confirm
     end
+
+    it "confirms / denies" do
+      (confirm / deny?).should == confirm
+      (Object.new.confirm / deny?).should == confirm
+    end
+
+    it "is in denial" do
+      (false.confirm / deny?).should == deny
+    end
   end
 
   describe "Lies" do
