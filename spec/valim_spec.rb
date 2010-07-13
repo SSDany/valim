@@ -11,6 +11,10 @@ describe "Valim" do
     lambda { facepalm }.should raise_error(Valim::FacepalmError)
   end
 
+  it "double facepalms" do
+    lambda { double_facepalm }.should raise_error(Valim::DoubleFacepalmError)
+  end
+
   describe "Truth" do
     it "is confirmed" do
       true.inspect.should == "confirm"

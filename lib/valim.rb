@@ -1,5 +1,6 @@
 module Valim
   class FacepalmError < StandardError ; end
+  class DoubleFacepalmError < FacepalmError ; end
 
   def have_doubts
     !!yield
@@ -29,6 +30,11 @@ module Kernel
   def facepalm
     raise Valim::FacepalmError, "**facepalm**"
   end
+
+  def double_facepalm
+    raise Valim::DoubleFacepalmError, "**double-facepalm**"
+  end
+
 end
 
 class FalseClass
